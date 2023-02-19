@@ -1,0 +1,67 @@
+//////////////////////////////////////////////////////
+front End api fething and using;
+
+1-----------------instal cors package in api;
+
+2------------------app.use(cors());
+
+
+3------------------make folder api-helpers and helpers.js in folder;
+import axios from "axios";
+
+export const getAllPosts = async () => {
+    
+  const res= await axios.get("http://localhost:5000/posts")
+  if(res.status !== 200) {
+    console.log("some error occured")
+  }
+
+  const data = res.data;
+  return data;
+}
+
+
+4--------------------------import get getAllPosts in diaries.js
+
+
+5--------------------------use useEffect in diaries.js and fetch data;
+useEffect(() => {
+    getAllPosts().then((data) => console.log(data))
+    .catch((err) => console.log(err))
+}, [])
+
+
+6--------------------------now we will update data dynamically;
+
+7---------------------------use useSate for storing the data;
+ const [posts, setPosts] = useState;
+ getAllPosts().then((data) => setPosts(data?.posts))
+
+ 8----------------------------use data which is stored in "posts" in map function;
+ {posts && posts.map((item) => (
+        <DiaryItem key={item}/>
+      ))}
+
+
+9----------------------------set props in diaryItems.js for using the data dynamically;
+const DiaryItem = ({title, description, image, location, date, id }) => {
+
+
+10--------------------------set data dynamically;
+                     title={title}
+                    header={location}
+                    subheader={date}
+                    set other props also
+
+
+11-------------------------
+
+
+
+
+
+
+
+
+12-----------------dairyItem.js;
+<IconButton LinkComponent={Link} to={`/post/${id}`} color="error">
