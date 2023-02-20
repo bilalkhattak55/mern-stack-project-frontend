@@ -34,7 +34,7 @@ const DiaryItem = ({ title, description, image, location, date,id, user, name}) 
     return (
         <>
 
-            <Card sx={{ width: "55%", height: "67vh", margin: 1, padding: 1, display: 'flex', flexDirection: "column", boxShadow: "5px 5px 10px #ccc" }}>
+            <Card sx={{ width: "55%", height: "auto", margin: 1, padding: 1, display: 'flex', flexDirection: "column", boxShadow: "5px 5px 10px #ccc" }}>
                 <CardHeader
                     avatar={
                         <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
