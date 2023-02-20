@@ -14,6 +14,7 @@ const Profile = () => {
     getUserDetails()
       .then((data) => setUser(data.user))
       .catch((err) => console.log(err));
+     
   }, []);
   const handleClick = () => {
     dispatch(authActions.logout());
@@ -24,7 +25,8 @@ const Profile = () => {
 // console.log("user",user)
 
   return (
-    <Box display="flex" flexDirection={"column"}>
+<>
+       <Box display="flex" flexDirection={"column"}>
       {user && (
         <>
           {" "}
@@ -74,6 +76,9 @@ const Profile = () => {
         </>
       )} 
     </Box>
+    
+
+    </>
   );
 };
 

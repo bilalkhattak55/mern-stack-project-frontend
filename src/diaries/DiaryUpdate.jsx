@@ -4,9 +4,11 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getPostDetails, postUpdate } from "../api-helpers/helpers";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
-import { addPost } from "../api-helpers/helpers";
+// import { addPost } from "../api-helpers/helpers";
 
 const DiaryUpdate = () => {
+  
+ 
   const navigate = useNavigate()
   const [post, setPost] = useState();
   const [inputs, setInputs] = useState({ title: "", description: "", location: "", imageUrl: "" });
@@ -28,6 +30,8 @@ const DiaryUpdate = () => {
           .catch((err) => console.log(err));
 
       })
+ 
+      
   }, [id])
 
 
@@ -56,6 +60,7 @@ const DiaryUpdate = () => {
   // console.log("poost", post)
 
   return (
+  
 
     <Box display="flex" flexDirection={"column"} width="100%" height="100%">
       <Box display="flex" margin="auto" padding={2}>
